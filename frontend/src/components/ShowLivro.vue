@@ -2,11 +2,11 @@
   <Navbar />
   <div class="main-container">
     <h2 class="text-center">
-      {{ mode === "adicionar" ? "Adicionar Livro" : "Editar Livro" }}
+      {{ mode === "adicionar" ? "Adicionar Livro" : "Livro" }}
     </h2>
 
     <div class="container register-container">
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="editForm">
         <div class="row row-cols-2">
           <div class="col-md-6">
             <div class="form-group mt-3">
@@ -86,7 +86,7 @@
         <div class="row row-cols-2">
           <div class="col-md-6">
             <div class="form-group mt-3">
-              <label for="anoEdicao">Anon de edição</label>
+              <label for="anoEdicao">Ano de edição</label>
               <input
                 type="text"
                 class="form-control"
@@ -108,9 +108,19 @@
           </div>
         </div>
 
-        <button type="submit" class="btn card-btn mt-4">
-          {{ mode === "adicionar" ? "Adicionar" : "Editar" }}
-        </button>
+        <!-- BUTTONS ACTIVES -->
+        <div class="row row-cols-2">
+          <div class="col-md-6">
+            <button class="btn card-btn-edit mt-4" @click="editar(livro)">
+              Editar
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn card-btn-delete mt-4" @click="remover(livro.id)">
+              Deletar
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -123,7 +133,7 @@ import Navbar from "./Navbar.vue";
 import Footer from "./Footer.vue";
 
 export default {
-  name: "EditLivro",
+  name: "ShowLivro",
   components: {
     Navbar,
     Footer,
@@ -141,21 +151,29 @@ export default {
         anoEdicao: "",
         numEdicao: "",
       },
-      mode: "adicionar", // ou 'editar'
     };
   },
   methods: {
-    async submitForm() {
+    async editar(livro) {
       try {
-        if (this.mode === "adicionar") {
-          await axios.post("http://localhost:8000/livro", this.livro);
-        } else {
-          await axios.patch(
-            `http://localhost:8000/livro/${this.livro.id}`,
-            this.livro
-          );
-        }
+        await axios.patch(
+          `http://localhost:8000/livro/${this.livro.id}`,
+          this.livro
+        );
+
         alert("Livro editado com sucesso!");
+        this.$router.push("/home");
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async remover(id) {
+      try {
+        await axios.delete(`http://localhost:8000/livro/${id}`);
+        // this.livrosData = this.livrosData.filter((livro) => livro.id !== id);
+
+        alert("Livro deletado com sucesso!");
         this.$router.push("/home");
       } catch (error) {
         console.error(error);
@@ -180,14 +198,30 @@ export default {
 </script>
 
 <style>
-.card-btn {
+.card-btn-edit {
   color: #000;
   background-color: #f5c518;
   border: 2px solid #f5c518;
   width: 100%;
+  font-weight: bold;
 }
 
-.card-btn:hover {
+.card-btn-edit:hover {
+  background-color: transparent;
+  border-color: #f5c518;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-btn-delete {
+  font-weight: bold;
+  color: #000;
+  background-color: #f51818;
+  border: 2px solid #f51818;
+  width: 100%;
+}
+
+.card-btn-delete:hover {
   background-color: transparent;
   border-color: #f5c518;
   font-weight: bold;

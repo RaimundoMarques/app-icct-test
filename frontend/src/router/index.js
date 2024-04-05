@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from '../components/Login.vue'
 import EditLivro from '../components/EditLivro.vue'
 import CriarLivro from '../components/CriarLivro.vue'
+import ShowLivro from '@/components/ShowLivro.vue'
 
 
 const routes = [
@@ -17,7 +18,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/criaLivro',
+    path: '/cria-livro',
     name: 'CriarLivro',
     component: CriarLivro
     // component: () => import(/* webpackChunkName: "criaLivro" */ '../components/CriarLivro.vue')
@@ -26,6 +27,11 @@ const routes = [
     path: '/editar/:id',
     name: 'EditLivro',
     component: EditLivro
+  },
+  {
+    path: '/show-livro/:id',
+    name: 'ShowLivro',
+    component: ShowLivro
   }
 
 ]

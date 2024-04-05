@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <div class="main-container">
-    <h1 class="text-center">Cadastrar livro</h1>
+    <h2 class="text-center">Cadastrar livro</h2>
 
     <div class="col-lg-4 m-auto" id="register-container">
       <!-- CADASTRAR UM LIVRO -->
@@ -11,7 +11,7 @@
             type="text"
             class="form-control"
             v-model="livro.nome"
-            placeholder="Nome do livro"
+            placeholder="Nome"
           />
         </div>
 
@@ -20,7 +20,7 @@
             type="text"
             class="form-control"
             v-model="livro.nomeDoAutor"
-            placeholder="Autor do Livro"
+            placeholder="Autor"
           />
         </div>
 
@@ -38,7 +38,7 @@
             type="text"
             class="form-control"
             v-model="livro.tipo"
-            placeholder="Digite o tipo do livro"
+            placeholder="Tipo"
           />
         </div>
 
@@ -47,7 +47,7 @@
             type="text"
             class="form-control"
             v-model="livro.genero"
-            placeholder="Gênero do livro"
+            placeholder="Gênero"
           />
         </div>
 
@@ -56,7 +56,7 @@
             type="text"
             class="form-control"
             v-model="livro.editora"
-            placeholder="Qual a editora do Livro"
+            placeholder="Editora"
           />
         </div>
 
@@ -65,7 +65,7 @@
             type="text"
             class="form-control"
             v-model="livro.anoEdicao"
-            placeholder="O ano da Edição do Livro"
+            placeholder="Ano de Edição"
           />
         </div>
 
@@ -90,12 +90,11 @@ import Livros from "../services/livros";
 import Navbar from "./Navbar.vue";
 import Footer from "./Footer.vue";
 
-
 export default {
   name: "CriarLivro",
-  components:{
+  components: {
     Navbar,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -127,7 +126,7 @@ export default {
             numEdicao: "",
           };
           // this.$toasted.success("Livro cadastrado com sucesso!");
-          alert("Livro cadastrado com sucesso!")
+          alert("Livro cadastrado com sucesso!");
           // Redirecionar para a página Home após o cadastro
           this.$router.push("/home");
         })
@@ -135,7 +134,7 @@ export default {
           // this.$toasted.error(
           //   "Erro ao cadastrar livro. Por favor, tente novamente."
           // );
-          alert("Erro ao cadastrar livro. Por favor, tente novamente.")
+          alert("Erro ao cadastrar livro. Por favor, tente novamente.");
           window.location.reload();
         });
     },
@@ -144,11 +143,6 @@ export default {
 </script>
 
 <style>
-
-.main-container{
-  margin-top: 10vh;
-}
-
 .form-group {
   margin-top: 15px;
 }

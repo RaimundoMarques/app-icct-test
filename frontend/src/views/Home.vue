@@ -1,58 +1,50 @@
 <template>
   <Navbar />
-  <div class="container">
-    <div class="container-home">
+  <div class="main-container w-75 p-4">
+    <div class="container mb-5">
       <input
         id="search"
         type="text"
         v-model="searchLivro"
         placeholder="Digite o nome do livro"
-        class="form-control m-auto w-50 mb-5"
+        class="form-control w-75 m-auto"
       />
-
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Autor</th>
-            <th scope="col">Ano de Lançamento</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Gênero</th>
-            <th scope="col">Editora</th>
-            <th scope="col">Ano de Edição</th>
-            <th scope="col">Número de Edição</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-
-        <tbody class="align-items-center">
-          <tr v-for="livro in livros" :key="livro.id">
-            <td>{{ livro.nome }}</td>
-            <td>{{ livro.nomeDoAutor }}</td>
-            <td>{{ livro.lancamento }}</td>
-            <td>{{ livro.tipo }}</td>
-            <td>{{ livro.genero }}</td>
-            <td>{{ livro.editora }}</td>
-            <td>{{ livro.anoEdicao }}</td>
-            <td>{{ livro.numEdicao }}</td>
-            <td>
-              <button
-                class="btn btn-success btn-sm"
-                @click="editarLivro(livro.id)"
-              >
-                Editar
-              </button>
-            </td>
-            <td>
-              <button class="btn btn-danger btn-sm" @click="remover(livro.id)">
-                Deletar
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Autor</th>
+          <th colspan="2">Ano Lançamento</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Gênero</th>
+          <th scope="col">Editora</th>
+          <th scope="col">Ano de Edição</th>
+          <th scope="col">Número de Edição</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody class="align-items-center">
+        <tr v-for="livro in livros" :key="livro.id">
+          <td>{{ livro.nome }}</td>
+          <td>{{ livro.nomeDoAutor }}</td>
+          <td colspan="2">{{ livro.lancamento }}</td>
+          <td>{{ livro.tipo }}</td>
+          <td>{{ livro.genero }}</td>
+          <td>{{ livro.editora }}</td>
+          <td>{{ livro.anoEdicao }}</td>
+          <td>{{ livro.numEdicao }}</td>
+          <td></td>
+          <td>
+            <button class="btn btn-primary btn-sm" @click="showLivro(livro.id)">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <Footer></Footer>
 </template>
@@ -83,19 +75,10 @@ export default {
         console.error(error);
       }
     },
-    async remover(id) {
-      try {
-        await axios.delete(`http://localhost:8000/livro/${id}`);
-        this.livrosData = this.livrosData.filter((livro) => livro.id !== id);
-        alert("Livro deletado com sucesso!");
-      } catch (error) {
-        console.error(error);
-      }
-    },
 
-    editarLivro(id) {
+    showLivro(id) {
       // Redirecionar para a página de edição com o ID do livro
-      this.$router.push(`/editar/${id}`);
+      this.$router.push(`/show-livro/${id}`);
     },
   },
   mounted() {
@@ -115,14 +98,12 @@ export default {
 </script>
 
 <style>
-.container-home {
-  margin-top: 10vh;
-  margin-bottom: 30vh;
+.main-container {
+  margin: 18vh auto 30vh auto;
 }
 
-.table {
-  max-width: 110vh;
-  min-width: 10vh;
-  margin: auto;
+thead th {
+  background-color: #333;
+  color: #fff;
 }
 </style>

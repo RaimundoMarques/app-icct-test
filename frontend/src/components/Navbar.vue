@@ -1,45 +1,33 @@
 <template>
   <div id="nav">
     <!-- NAVBAR -->
-    <div class="row row-cols-3">
+    <div class="row row-cols-3 w-75 m-auto">
       <!-- LOGO -->
       <div class="col-sm-4">
         <router-link to="/">
-          <img
-            src="/img/logo-biblioteca.jpeg"
-            alt="Imagem do Livro"
-            id="logo"
-            class="img-fluid"
-          />
+          <abbr title="Voltar para Login">
+            <img
+              src="/img/logo-biblioteca.jpeg"
+              alt="Imagem do Livro"
+              id="logo"
+              class="img-fluid"
+            />
+          </abbr>
         </router-link>
       </div>
 
       <!-- TÍTULO -->
       <div class="col-sm-4 text-center">
-        <div class="container fs-1">
-          Biblioteca
-        </div>
+        <div class="container fs-1">Biblioteca</div>
       </div>
 
       <!-- BARRA NAVBAR -->
       <div class="col-sm-4">
-
-        <!-- LINKS -->
-        <div class="row row-cols-3 text-center links">
-
-          <div class="col-sm-3 fs-5">
-            <router-link to="/home" id="home">Home</router-link>
-          </div>
-
-          <div class="col-sm-6 fs-5">
-            <router-link to="/criaLivro" id="newLivro">Novo Livro</router-link>
-          </div>
-
-          <div class="col-sm-3 fs-5">
-            <router-link to="/" id="sair">Sair</router-link>
-          </div>
+        <div class="btn-group mt-2" role="group" aria-label="Basic example">
+          <router-link to="/home">Home</router-link>
+          <router-link to="/cria-livro">Novo</router-link>
+          <router-link to="/">Sair</router-link>
         </div>
-
       </div>
     </div>
   </div>
@@ -51,7 +39,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+ul {
+  margin-top: 10px;
+  margin-left: 15px;
+  border: 1px solid #fff;
+  width: 30vh;
+}
+ul li {
+  display: inline;
+  border: 1px solid #fff;
+  width: 100%;
+}
+
 #title-navbar {
   color: #fff;
 }
@@ -71,8 +71,10 @@ export default {
 
 #logo {
   width: 60px;
-
   border-radius: 2px;
+  padding: 4px;
+  border-bottom: none;
+  cursor: pointer;
 }
 
 #nav a {
@@ -81,9 +83,5 @@ export default {
   margin: 12px;
   transition: 0.5s;
   font-size: 22px;
-}
-
-#nav a:hover {
-  color: #fff;
 }
 </style>
