@@ -160,7 +160,7 @@ export default {
 
 .card-btn:hover {
   background-color: transparent;
-  color: #f5c518;
+  color: #000;
   border-color: #f5c518;
 }
 </style>

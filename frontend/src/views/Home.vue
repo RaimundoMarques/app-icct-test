@@ -1,17 +1,17 @@
 <template>
   <Navbar />
-  <div class="main-container w-75 p-4">
-    <div class="container mb-5">
+  <div class="home">
+    <div class="main-container mb-5">
       <input
         id="search"
         type="text"
         v-model="searchLivro"
         placeholder="Digite o nome do livro"
-        class="form-control w-75 m-auto"
+        class="form-control w-50 m-auto"
       />
     </div>
 
-    <table class="table table-hover">
+    <table class="table m-auto w-50">
       <thead>
         <tr>
           <th scope="col">Nome</th>
@@ -101,14 +101,28 @@ export default {
   margin: 18vh auto 30vh auto;
 }
 
+.home{
+  padding-bottom: 10vh;
+}
 thead th {
   background-color: #333;
   color: #fff;
 }
 
-@media (min-width: 1035px){
-  .table{
-    width: 1035px;
+.btn{
+  margin: auto;
+}
+
+/* MOBILE */
+
+/* SM >= 768 Pixels*/
+@media (max-width: 819px) {
+  .form-control {
+    min-width: 409px;
+    position: absolute;
+    top: 10vh;
+    left: 25%;
+    display: flex;
   }
 }
 </style>

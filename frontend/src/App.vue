@@ -37,42 +37,4 @@ h2 {
 .sair {
   margin-top: 15px;
 }
-
-/* MOBILE */
-@media (min-width: 230px) {
-  .register-container {
-    width: auto;
-  }
-
-  h1 {
-    margin-top: 10vh;
-  }
-}
-
-@media (min-width: 576px) {
-  .register-container {
-    width: auto;
-  }
-
-  h1 {
-    margin-top: 10vh;
-  }
-}
-
-@media (min-width: 960px) {
-  .register-container {
-    width: 800px;
-  }
-
-  h1 {
-    margin-top: 10vh;
-  }
-}
-
-@media (max-width: 992px) {
-  .newLivro,
-  .sair {
-    display: none;
-  }
-}
 </style>

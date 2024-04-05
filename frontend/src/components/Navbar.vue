@@ -18,15 +18,15 @@
 
       <!-- TÍTULO -->
       <div class="col-sm-4 text-center">
-        <div class="container fs-1">Biblioteca</div>
+        <div class="container fs-1 mt-2">Biblioteca</div>
       </div>
 
       <!-- BARRA NAVBAR -->
-      <div class="col-sm-4">
+      <div class="col-sm-4 link-navbar">
         <div class="btn-group mt-2" role="group" aria-label="Basic example">
-          <router-link to="/home">Home</router-link>
-          <router-link to="/cria-livro">Novo</router-link>
-          <router-link to="/">Sair</router-link>
+          <router-link to="/home" class="link-home">Home</router-link>
+          <router-link to="/cria-livro" class="link-new">Novo</router-link>
+          <router-link to="/" class="link-sair">Sair</router-link>
         </div>
       </div>
     </div>
@@ -83,5 +83,24 @@ ul li {
   margin: 12px;
   transition: 0.5s;
   font-size: 22px;
+}
+
+/* MOBILE */
+
+/* SM >= 768 Pixels*/
+@media (max-width: 819px) {
+  .link-new,
+  .link-sair {
+    display: none;
+  }
+
+  .link-navbar {
+    text-align: center;
+  }
+
+  .img-fluid {
+    margin-top: 5px;
+    float: left;
+  }
 }
 </style>
