@@ -4,12 +4,12 @@
     <form @submit.prevent="login" class="form-control p-5 bg-dark">
       <!-- email input -->
       <div class="form-outline mb-4">
-        <label class="form-label" id="labelEmail" for="formInput">Email</label>
+        <label class="form-label text-white" id="labelEmail" for="formInput">Email</label>
         <input type="email" id="email" v-model="email" class="form-control" />
       </div>
 
       <!-- passwod input -->
-      <label class="form-label" id="labelPassword" for="formInput">Senha</label>
+      <label class="form-label text-white" id="labelPassword" for="formInput">Senha</label>
       <div class="form-outline mb-4">
         <input
           type="password"
@@ -51,6 +51,7 @@
     <p v-if="error">{{ error }}</p>
 
     <div class="container-msg">
+      <p>User</p>
       <small>E-mail: admin@gmail.com</small>
       <small>Password: senha123</small>
     </div>
@@ -100,6 +101,10 @@ export default {
   text-align: center;
 }
 
+p{
+  color: #333;
+  text-align: center;
+}
 .container {
   display: flex;
   flex-direction: column;

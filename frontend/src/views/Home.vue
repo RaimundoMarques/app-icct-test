@@ -36,7 +36,6 @@
           <td>{{ livro.editora }}</td>
           <td>{{ livro.anoEdicao }}</td>
           <td>{{ livro.numEdicao }}</td>
-          <td></td>
           <td>
             <button class="btn btn-primary btn-sm" @click="showLivro(livro.id)">
               Visualizar
@@ -105,5 +104,11 @@ export default {
 thead th {
   background-color: #333;
   color: #fff;
+}
+
+@media (min-width: 1035px){
+  .table{
+    width: 1035px;
+  }
 }
 </style>
