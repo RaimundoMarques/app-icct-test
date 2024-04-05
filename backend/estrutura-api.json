@@ -1,0 +1,26 @@
+{
+    "nome": [
+        "This field may not be blank."
+    ],
+    "nomeDoAutor": [
+        "This field may not be blank."
+    ],
+    "lancamento": [
+        "A valid integer is required."
+    ],
+    "tipo": [
+        "This field may not be blank."
+    ],
+    "genero": [
+        "This field may not be blank."
+    ],
+    "editora": [
+        "This field may not be blank."
+    ],
+    "anoEdicao": [
+        "A valid integer is required."
+    ],
+    "numEdicao": [
+        "A valid integer is required."
+    ]
+}

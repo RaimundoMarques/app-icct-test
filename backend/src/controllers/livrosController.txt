@@ -1,0 +1,50 @@
+const { json } = require('express')
+const livrosModel = require('../models/livrosModel')
+const { request, response } = require('../app')
+
+// READ
+const getAllLivros = async (response) => {
+
+    const livros = await livrosModel.getAllLivros()
+    return response.status(201).json(livros)
+    
+}
+
+// CREATE
+const createLivro = async (request, response) => {
+    const createdLivro = await livrosModel.createLivro(request.body)
+
+    return response.status(200).json({ message: "Livro criado com sucesso!" })
+}
+
+// DELETE
+const deleteLivro = async (request, response) => {
+    const { id } = request.params
+    await livrosModel.deleteLivro(id);
+
+    return response.status(200).json({ message: `"Livro ${id} apagado com sucesso!"` })
+}
+
+// Buscar livro por ID
+const searchLivro = async (_request, response) => {
+    const livro = await livrosModel.searchLivro()
+    return response.status(200).json(livro)
+}
+
+
+
+// const updateTask = async (request, response) => {
+
+//     const { id } = request.params
+
+//     await tasksModel.updateTask(id, request.body)
+//     return response.status(204).json()
+// }
+
+// Exportando  objetos
+module.exports = {
+    getAllLivros,
+    createLivro,
+    searchLivro,
+    deleteLivro
+}
