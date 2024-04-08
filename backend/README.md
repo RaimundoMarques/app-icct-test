@@ -25,4 +25,6 @@ Passo 3:
   - Para criar a tabela de usuários, rode o script.sql no terminal:
     docker exec -i db-postgres psql -U postgres -d postgres < /home/raimundo-marques/Projects/app-icct/backend/script.sql
 
+    Obs.: Verificar o caminho do diretório para rodar o script. No lugar de '/home/raimundo-marques/Projects', coloque o caminho na sua máquina.
+
 Obeserção: Caso seja preciso rodar o docker-compose novamente, será necessário excluir o diretório 'data/', com privilégios root, para rodar o banco de dados Postgres.

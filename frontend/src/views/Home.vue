@@ -114,15 +114,4 @@ thead th {
 }
 
 /* MOBILE */
-
-/* SM >= 768 Pixels*/
-@media (max-width: 819px) {
-  .form-control {
-    min-width: 409px;
-    position: absolute;
-    top: 10vh;
-    left: 25%;
-    display: flex;
-  }
-}
 </style>

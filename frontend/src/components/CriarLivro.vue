@@ -163,4 +163,11 @@ export default {
   color: #000;
   border-color: #f5c518;
 }
+
+@media (min-width: 576px) {
+  #register-container form {
+    padding: 10px;
+    width: 576px;
+  }
+}
 </style>
