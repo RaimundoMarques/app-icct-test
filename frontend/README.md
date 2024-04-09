@@ -1,19 +1,7 @@
 # app-icct
 
-## Project setup
-```
-npm install
-```
+# Passo 01:
+    - Instale as dependências do NodeJS com o comando: npm install
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Passo 02:
+    - Para rodar os container Docker, use: docker-compose up -d

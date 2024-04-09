@@ -111,12 +111,12 @@
         <!-- BUTTONS ACTIVES -->
         <div class="row row-cols-2">
           <div class="col-md-6">
-            <button class="btn card-btn-edit mt-4" @click="editar(livro)">
+            <button class="btn card-btn-edit btn-lg mt-4" @click="editar(livro)">
               Editar
             </button>
           </div>
           <div class="col-md-6">
-            <button class="btn card-btn-delete mt-4" @click="remover(livro.id)">
+            <button class="btn card-btn-delete btn-lg mt-4" @click="remover(livro.id)">
               Deletar
             </button>
           </div>
