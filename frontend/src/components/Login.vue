@@ -52,7 +52,7 @@
 
     <div class="container-msg">
       <p>User</p>
-      <small>E-mail: admin@gmail.com</small>
+      <small>E-mail: admin@icct.com</small>
       <small>Password: senha123</small>
     </div>
   </div>

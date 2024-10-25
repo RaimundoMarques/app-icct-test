@@ -34,7 +34,7 @@ app.post('/login', async (req, res) => {
 
         const { email, password } = req.body
 
-            if (email === 'admin@gmail.com' && password === 'senha123') {
+            if (email === 'admin@icct.com' && password === 'senha123') {
                 //res.status(200).json({ message: 'Login bem-sucedido', token: 'seu_token_de_autenticacao' });
                 res.status(200).json({ message: 'Login realizado com sucesso!' });
             } else {
