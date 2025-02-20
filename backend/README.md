@@ -7,9 +7,8 @@ Trata-se de uma aplicação de biblioteca, com as seguintes operações:
   - Editar um livro.
 
 O código possui 2 pastas:
-  - backend
-  - frontend
-Sendo o Backend desenvolvido com Nodejs e Frontend com VUE JS.
+  - backend : Node Js
+  - frontend : VUE Js
 
 O frontend foi desenvolvido a partir de um container Docker que virtualiza 2 containers
 Um contendo a imagem do Servidor Nodejs 16 e outra, uma imagem do Banco de Dados PostgreSQL.
